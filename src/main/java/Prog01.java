@@ -22,13 +22,12 @@ public class Prog01 {
 		
 		int x = 1;//成熟的兔子数	
 		int i = 3;//天数
-		
 		int z = 0;//总数
 		
-		int[] a = new int[100];//每天兔子出生数
+		int[] a = new int[1000];//每天兔子出生数
 		
 		
-		for (; i < month+1; i++) {
+		for (; i <= month; i++) {
 
 			x=x+a[i-2];//今天所有成熟的兔子数 =昨天成熟兔子数   + 前天出生的兔子
 			a[i] = x;//今天出生兔子数（今天出生兔子数   =    今天成熟兔子数
