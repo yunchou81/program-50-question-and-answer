@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import javax.security.auth.x500.X500Principal;
+
 /**
  * 2.指定范围包含的素数 --------------------
  * 
@@ -13,22 +15,35 @@ public class Prog02 {
 
 	public static void main(String[] args) {
 		// Scanner scanner = new Scanner(System.in);
-		// System.out.println("第几月：");
+		// System.out.println("第一个数：");
 		// int month = scanner.nextInt();
-		int[] a = new int[100];
+		// System.out.println("第二个数：");
+		// int month2 = scanner.nextInt();
+		int[] a = new int[201];
+		int month = 100;
+		int month2 = 200;
 		int i = 2;
-		while (i<=1000) {
-			if (a[i] == 0) {
-			for (int j = 0; i*j < 1000; j++) {
-				a[i*j]=1;
+		boolean flag = true;
+		while (flag) {
+			while (i < 201) {
+				if (a[i] == 0) {
+					for (int j = 2; (i * j) < 201; j++) {
+						a[i * j] = 1;
+					}
+					i++;
+				} else {
+					i++;
+				}
 			}
-		} else {
-			i++;
-		}
-		}
-		for (int j = 0; j < a.length; j++) {
-			System.out.println(a[j]);
-			
+			for (int j = 1; j < a.length; j++) {
+				if (j >= month && j < month2 && a[j] == 0) {
+
+					System.out.println("第" + j + "是质素");
+
+				}
+
+			}
+			flag = false;
 		}
 	}
 
