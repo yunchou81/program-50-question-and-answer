@@ -12,66 +12,18 @@
 public class Prog03 {
 
 	public static void main(String[] args) {
-		// ff1();
-		ff2();
-	}
 
-
-		int a = 1;
-		int b = 0;
-		int c = 0;
-		int x = 0;
-		int y = 0;
-
-		while (x <= 999) {
-			x = a * 100 + b * 10 + c;
-			y = a * a * a + b * b * b + c * c * c;
-			if (x == y) {
-				System.out.println(x);
-
-				c = c + 1;
-				if (c == 10) {
-					b = b + 1;
-					c = 0;
-					if (b == 10) {
-						a = a + 1;
-						b = 0;
-					}
-				}
-				x = a * 100 + b * 10 + c;
-				y = a * a * a + b * b * b + c * c * c;
-
-			} else {
-				c = c + 1;
-				if (c == 10) {
-					b = b + 1;
-					c = 0;
-					if (b == 10) {
-						a = a + 1;
-						b = 0;
-					}
-				}
-				x = a * 100 + b * 10 + c;
-				y = a * a * a + b * b * b + c * c * c;
-			}
-
-		}
-
-	}
-
-	static void ff2() {
-
-		int a = 100;
-		int b = 0;
-		int x = 0;
-		int y = 0;
-		int z = 0;
+		int a = 100;// 100
+		int b;// 三位数，其各位数字立方和
+		int x;// 百威数
+		int y;// 十位数
+		int z;// 个位数
 		for (; a < 999; a++) {
-			x = a / 100;
-			y = (a - x * 100) / 10;
-			z = a - x * 100 - y * 10;
-			b = x * x * x + y * y * y + z * z * z;
-			if (a == b) {
+			x = a / 100;// 求百位上的值
+			y = (a - x * 100) / 10;// 求十位上的值
+			z = a - x * 100 - y * 10;// 求个位上的值
+			b = x * x * x + y * y * y + z * z * z;//三位数，其各位数字立方和
+			if (a == b) {//判断三位数是否等于三位数的各位数字立方和，
 				System.out.println(a);
 			}
 		}

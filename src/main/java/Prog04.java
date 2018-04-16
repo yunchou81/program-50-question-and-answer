@@ -1,3 +1,4 @@
+import java.util.Iterator;
 import java.util.Scanner;
 
 import javax.print.DocFlavor.INPUT_STREAM;
@@ -21,19 +22,25 @@ public class Prog04 {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("要分解的数：");
 		int input = scanner.nextInt();
-		int[] a = new int[input + 1];
-		int[] b = new int[input + 1];
+
+		boolean[] 合数表 = new boolean[input + 1];// 数组初始化是false
+		// false是假
+		//
+		合数表[0] = true;// 0不是质数
+		合数表[1] = true;// 1不是质数
+
+		int[] 质因数 = new int[input + 1];
 		int input1 = input;
 		int k = 0;
 		int i = 2;
-		a[0] = 1;
-		a[1] = 1;
+
+		// 开始构建合数表
 		boolean flag = true;
 		while (flag) {
-			while (i <= input) {
-				if (a[i] == 0) {
-					for (int j = 2; (i * j) <= input; j++) {
-						a[i * j] = 1;
+			while (i <= input) {// 进入条件为 i<分解数，
+				if (合数表[i] == false) {// 进入条件为质数
+					for (int j = 2; (i * j) <= input; j++) {//
+						合数表[i * j] = true; // i*j是合数
 					}
 					i++;
 				} else {
@@ -42,37 +49,31 @@ public class Prog04 {
 			}
 			flag = false;
 		}
-		flag = true;
+		// 构建合数表结束
+
+		// 分解质因数
 		i = 2;
-		if (a[input] == 0) {
+		if (合数表[input] == false) {// 如果分解数 本身 是质数，直接输出 分解数
 			System.out.println(input + "分解质因素为" + input);
 		} else {
-			while (input1 != 1) {
-				if (a[i] == 0) {
-					if (input1 % i == 0) {
-						b[k] = i;
-						input1 = input1 / i;
-						k = k + 1;
-					} else {
-						i++;
-					}
-
+			while (input1 != 1) {// 最后的一个 为1
+				// 判断这个数是否是质数 并且 是否为因数 不是则跳到下一个数
+				if (合数表[i] == false && input1 % i == 0) {
+					质因数[k] = i;// 记录因数
+					input1 = input1 / i;// 分解此因数
+					k++;
 				} else {
 					i++;
 				}
 
 			}
-			System.out.println(input + "分解质因素为");
-			k = 0;
-			// for (k = 0;a[k]!=0; k++) {
-			// System.out.println(k);
-			// System.out.println(b[k]);
-			while (a[k] > 0) {
-				System.out.println(b[k]);
-				k = k + 1;
-			}
-		}
 
+			System.out.print(input + "分解质因素为" );
+			for (int j = 0; 质因数[j] > 0; j++) {
+				System.out.print(质因数[j] + ",");
+			}
+
+		}
 	}
 
 }
