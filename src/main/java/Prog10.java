@@ -10,7 +10,14 @@
 public class Prog10 {
 
 	public static void main(String[] args) {
-
+		int x=100;
+		int[] a = new int[1000];
+		for (int i = 1; x!=0; i++) {
+			a[i]=x;
+			System.out.println("第"+(i-1)+"次落地篮球高度为"+x);
+			x=x/2;
+		}
+		System.out.println(x);
 	}
 
 }

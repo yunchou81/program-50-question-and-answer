@@ -12,6 +12,11 @@
 public class Prog03 {
 
 	public static void main(String[] args) {
+		// ff1();
+		ff2();
+	}
+
+
 		int a = 1;
 		int b = 0;
 		int c = 0;
@@ -35,7 +40,7 @@ public class Prog03 {
 				}
 				x = a * 100 + b * 10 + c;
 				y = a * a * a + b * b * b + c * c * c;
-			
+
 			} else {
 				c = c + 1;
 				if (c == 10) {
@@ -50,6 +55,25 @@ public class Prog03 {
 				y = a * a * a + b * b * b + c * c * c;
 			}
 
+		}
+
+	}
+
+	static void ff2() {
+
+		int a = 100;
+		int b = 0;
+		int x = 0;
+		int y = 0;
+		int z = 0;
+		for (; a < 999; a++) {
+			x = a / 100;
+			y = (a - x * 100) / 10;
+			z = a - x * 100 - y * 10;
+			b = x * x * x + y * y * y + z * z * z;
+			if (a == b) {
+				System.out.println(a);
+			}
 		}
 	}
 

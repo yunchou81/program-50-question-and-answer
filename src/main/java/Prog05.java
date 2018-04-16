@@ -1,3 +1,4 @@
+import java.util.Scanner;
 /**
  5.条件运算符使用
 ----------------
@@ -11,7 +12,22 @@
 public class Prog05 {
 
 	public static void main(String[] args) {
-
+		Scanner scanner = new Scanner(System.in);
+		int x=0;
+		while (x==0) {
+			System.out.println("多少分：");
+			int achievement = scanner.nextInt();
+			if (achievement>=90) {
+				System.out.println("A");
+			}else if (achievement>=60) {
+				System.out.println("B");
+			}else if (achievement>=0) {
+				System.out.println("C");
+			}else {
+				System.out.println("对不起，你输入的分数有误");
+			}
+		}
+		
 	}
 
 }
