@@ -12,7 +12,13 @@
 public class Prog17 {
 
 	public static void main(String[] args) {
-
+		int day=10;
+		int number=1;
+		while (day!=1) {
+			number=(number+1)*2;
+			day--;
+		}
+		System.out.println("第一天摘了"+number);
 	}
 
 }
