@@ -27,12 +27,12 @@ public class Prog08 {
 
 		for (int i = 0; i < num2; i++) {
 			System.out.print(array[i]);
-			num3=num3+array[i];
-			if (i<num2) {
+			num3 = num3 + array[i];
+			if (i < num2) {
 				System.out.print("+");
 			}
 		}
-		System.out.println("="+num3);
+		System.out.println("=" + num3);
 	}
 
 }
