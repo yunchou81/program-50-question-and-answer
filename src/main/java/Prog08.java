@@ -22,13 +22,13 @@ public class Prog08 {
 		int[] array = new int[num2];
 		for (int i = 0; i < num2; i++) {
 			array[i] = num1;
-			num1 = num1 * 10 + array[0];
+			num1 = array[i] * 10 + array[0];
 		}
 
 		for (int i = 0; i < num2; i++) {
 			System.out.print(array[i]);
 			num3 = num3 + array[i];
-			if (i < num2) {
+			if (i < num2-1) {
 				System.out.print("+");
 			}
 		}
