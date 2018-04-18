@@ -9,20 +9,18 @@
 public class Prog41 {
 
 	public static void main(String[] args) {
-		// int h = 5;
-		// int t = 1;
-		// while (h != 0) {
-		// t = t * 5 + 1;
-		// h--;
-		// }
-		// System.out.println(t);
+		 int h = 5;
+		 int t = 1;
+		 while (h != 0) {
+		 t = t * 5 + 1;
+		 h--;
+		 }
+		 System.out.println(t);
 
 		int n;
 		n = fun(0);
 		System.out.println("原来有" + n + "个桃子");
 	}
-
-	
 
 	private static int fun(int i) {
 		if (i == 5)
@@ -31,5 +29,4 @@ public class Prog41 {
 			return fun(i + 1) * 5 + 1;
 	}
 
-
-}}
+}
