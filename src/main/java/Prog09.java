@@ -23,7 +23,7 @@ public class Prog09 {
 					total = total + i;
 				}
 			}
-			if (num == total + 1) {
+			if (num == total+1) {
 				System.out.println(num);
 			} else {
 				total = 0;
