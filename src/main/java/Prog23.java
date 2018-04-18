@@ -11,7 +11,14 @@
 public class Prog23 {
 
 	public static void main(String[] args) {
-
+		int i=10;
+		int x=5;
+		while (x!=1) {
+			i=i+2;
+			x--;
+			
+		}
+		System.out.println(i);
 	}
 
 }
